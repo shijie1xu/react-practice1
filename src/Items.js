@@ -1,9 +1,21 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import Cart from "./Cart";
+import {Link} from "react-router-dom";
+
 
 class Items extends Component{
     render() {
         return (
             <div>
+                <Router>
+                    <Switch>
+                        <Route path="/Cart" component={Cart}/>
+                    </Switch>
+
+
+                </Router>
+
                 <input type="text" placeholder="Search"/>
                 <br/>
                 <span>Cart:0 Total Price:$0</span>
@@ -12,7 +24,7 @@ class Items extends Component{
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
-                        <th><a href="">My Cart</a></th>
+                        <th><a href="/Cart">My Cart</a></th>
                     </tr>
                     <tr>
                         <td><a href="">Apple</a></td>
